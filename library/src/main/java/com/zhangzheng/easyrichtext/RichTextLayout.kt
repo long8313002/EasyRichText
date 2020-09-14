@@ -25,6 +25,11 @@ class RichTextLayout : FrameLayout {
 
     private val mChildren = mutableListOf<View>()
 
+    fun update(){
+        removeAllViews()
+        addView(createShowTextView(generateSpanString()))
+    }
+
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
 
@@ -51,8 +56,7 @@ class RichTextLayout : FrameLayout {
 
                     override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                         it.removeTextChangedListener(this)
-                        removeAllViews()
-                        addView(createShowTextView(generateSpanString()))
+                        update()
                         it.addTextChangedListener(this)
                     }
                 })

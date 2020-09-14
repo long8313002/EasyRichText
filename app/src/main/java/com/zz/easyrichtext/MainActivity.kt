@@ -2,6 +2,7 @@ package com.zz.easyrichtext
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -18,6 +19,8 @@ class MainActivity : AppCompatActivity() {
 
         flClick.setOnClickListener {
             Toast.makeText(this,"自定义视图被点击",Toast.LENGTH_SHORT).show()
+            flClick.visibility = View.GONE
+            richTextLayout.update()
         }
 
         ivClick.setOnClickListener {

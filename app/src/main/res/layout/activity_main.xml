@@ -9,6 +9,7 @@
 
 
     <com.zhangzheng.easyrichtext.RichTextLayout
+        android:id="@+id/richTextLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
