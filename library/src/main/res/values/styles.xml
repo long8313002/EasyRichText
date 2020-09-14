@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <declare-styleable name="rich_text" tools:ignore="ResourceName">
+        <attr name="layout_isUnderline" format="boolean" />
+        <attr name="layout_isStrikethrough" format="boolean" />
+    </declare-styleable>
+
+</resources>

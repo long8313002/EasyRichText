@@ -1,6 +1,7 @@
 package com.zhangzheng.easyrichtext.viewparse
 
 import android.graphics.Color
+import android.text.Spannable
 import android.text.SpannableString
 import android.view.View
 import android.widget.TextView
@@ -16,10 +17,15 @@ abstract class AbsTextParseWrap(private vararg var baseParse: ITextParse) : ITex
         baseParse.forEach {
             it.parse(view, spanString)
         }
-        parseImpl(view, spanString)
+
+        if(isMatching(view)){
+            spanString.setSpan(createSpan(view), 0, spanString.length, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
+        }
     }
 
-    abstract fun parseImpl(view: TextView, spanString: SpannableString)
+    abstract fun isMatching(view: TextView):Boolean
+
+    abstract fun createSpan(view: TextView):Any
 }
 
 class TextViewParse(private var textParse: ITextParse) : IViewParse {
