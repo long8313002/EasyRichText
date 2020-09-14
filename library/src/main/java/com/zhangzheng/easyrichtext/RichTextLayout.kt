@@ -30,7 +30,6 @@ class RichTextLayout : FrameLayout {
 
         getChildren()
         removeAllViews()
-        checkChildren()
         monitorChildren()
         addView(createShowTextView(generateSpanString()))
     }
@@ -38,14 +37,6 @@ class RichTextLayout : FrameLayout {
     private fun getChildren() {
         for (i in 0 until childCount) {
             mChildren.add(getChildAt(i))
-        }
-    }
-
-    private fun checkChildren() {
-        mChildren.forEach {
-            if (it !is TextView && it !is ImageView) {
-                throw RuntimeException("不支持的控件类型")
-            }
         }
     }
 

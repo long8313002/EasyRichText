@@ -2,6 +2,8 @@ package com.zhangzheng.easyrichtext
 
 import android.text.SpannableString
 import android.view.View
+import com.zhangzheng.easyrichtext.viewparse.ImageViewParse
+import com.zhangzheng.easyrichtext.viewparse.OtherViewParse
 import com.zhangzheng.easyrichtext.viewparse.TextViewParse
 import com.zhangzheng.easyrichtext.viewparse.textparse.*
 
@@ -14,7 +16,7 @@ interface IViewParse {
 
 internal object SpannableManager {
 
-    private val viewParseList = arrayListOf<IViewParse>(
+    private val viewParseList = arrayListOf(
         TextViewParse(
             ColorTextParse(
                 TextSizeParse(
@@ -29,7 +31,9 @@ internal object SpannableManager {
                     )
                 )
             )
-        )
+        ),
+        ImageViewParse(),
+        OtherViewParse()
     )
 
 
