@@ -3,10 +3,7 @@ package com.zhangzheng.easyrichtext
 import android.text.SpannableString
 import android.view.View
 import com.zhangzheng.easyrichtext.viewparse.TextViewParse
-import com.zhangzheng.easyrichtext.viewparse.textparse.BoldItalicTextParse
-import com.zhangzheng.easyrichtext.viewparse.textparse.ClickTextParse
-import com.zhangzheng.easyrichtext.viewparse.textparse.ColorTextParse
-import com.zhangzheng.easyrichtext.viewparse.textparse.TextSizeParse
+import com.zhangzheng.easyrichtext.viewparse.textparse.*
 
 interface IViewParse {
 
@@ -22,7 +19,17 @@ internal object SpannableManager {
             ColorTextParse(
                 TextSizeParse(
                     BoldItalicTextParse(
-                        ClickTextParse()))))
+                        ClickTextParse(
+                            BackgroundTextParse(
+                                StrikethroughTextParse(
+                                    UnderlineTextParse()
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        )
     )
 
 

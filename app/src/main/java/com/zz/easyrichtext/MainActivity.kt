@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
         tv3.setOnClickListener {
             Toast.makeText(this,"3333被点击",Toast.LENGTH_SHORT).show()
+            tv3.text = "asdasasdasd"
         }
     }
 }
