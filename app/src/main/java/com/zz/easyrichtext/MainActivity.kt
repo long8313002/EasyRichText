@@ -15,5 +15,14 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"3333被点击",Toast.LENGTH_SHORT).show()
             tv3.text = "asdasasdasd"
         }
+
+        flClick.setOnClickListener {
+            Toast.makeText(this,"自定义视图被点击",Toast.LENGTH_SHORT).show()
+        }
+
+        ivClick.setOnClickListener {
+            Toast.makeText(this,"图片被点击",Toast.LENGTH_SHORT).show()
+        }
+
     }
 }

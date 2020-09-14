@@ -7,60 +7,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-
-    <com.zhangzheng.easyrichtext.RichTextLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="中华阿斯顿"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="撒打算的"
-            android:textColor="#FF0000"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="可以点击的11"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="可以点击的333"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="333333"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="4444444"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="5555555"
-            android:textColor="#33FF00"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="5555555"
-            android:textColor="#33FF00"
-            android:layout_height="wrap_content"/>
-
-    </com.zhangzheng.easyrichtext.RichTextLayout>
-
 
     <com.zhangzheng.easyrichtext.RichTextLayout
         android:layout_width="match_parent"
@@ -95,7 +41,7 @@
             android:layout_height="wrap_content"/>
 
         <ImageView
-            android:visibility="gone"
+            android:id="@+id/ivClick"
             android:layout_width="wrap_content"
             android:src="@mipmap/ic_launcher"
             android:layout_height="wrap_content"/>
@@ -121,6 +67,7 @@
             android:layout_height="wrap_content"/>
 
         <FrameLayout
+            android:id="@+id/flClick"
             android:layout_width="wrap_content"
             android:padding="10dp"
             android:background="#33FF0000"

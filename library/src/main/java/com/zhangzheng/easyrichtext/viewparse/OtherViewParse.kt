@@ -8,6 +8,7 @@ import android.text.SpannableString
 import android.text.style.ImageSpan
 import android.view.View
 import com.zhangzheng.easyrichtext.IViewParse
+import com.zhangzheng.easyrichtext.viewparse.common.ClickableSpanImpl
 
 class OtherViewParse : IViewParse {
     override fun isMatching(view: View) = true
@@ -36,6 +37,9 @@ class OtherViewParse : IViewParse {
         d.setBounds(0, 0, bitmap.width, bitmap.height)
         val span = ImageSpan(d, ImageSpan.ALIGN_BASELINE)
         spanString.setSpan(span, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        if(view.hasOnClickListeners()){
+            spanString.setSpan(ClickableSpanImpl(view), 0, spanString.length, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
+        }
         return spanString
     }
 }
