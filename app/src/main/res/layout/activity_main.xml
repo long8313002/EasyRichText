@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,34 +10,18 @@
 
     <com.zhangzheng.easyrichtext.RichTextLayout
         android:id="@+id/richTextLayout"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <TextView
+            android:id="@+id/tvClick"
             android:text="1111111"
             android:textColor="#FF0000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:text="222222"
-            android:visibility="invisible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/tv3"
-            android:text="333333"
-            android:textColor="#FF0000"
-            android:textSize="40dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-
-        <TextView
-            android:text="4444444"
-            android:textStyle="bold"
+            android:textSize="18sp"
+            android:background="#FFFF00"
+            android:textStyle="bold|italic"
+            app:layout_isUnderline="true"
+            app:layout_isStrikethrough="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -47,56 +31,62 @@
             android:src="@mipmap/ic_launcher"
             android:layout_height="wrap_content"/>
 
-        <TextView
-            android:text="5555555"
-            android:textStyle="italic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-        <TextView
-            android:text="66666666"
-            android:textStyle="italic|bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-        <TextView
-            android:text="77777777"
-            android:background="#FF0000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
         <FrameLayout
             android:id="@+id/flClick"
             android:layout_width="wrap_content"
             android:padding="10dp"
             android:background="#33FF0000"
             android:layout_height="wrap_content">
-
             <TextView
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:text="我是自定义视图"
                 android:layout_height="wrap_content"/>
-
         </FrameLayout>
 
+        <TextView
+            android:text="222222"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv3"
+            android:text="333333"
+            android:textColor="#FF0000"
+            android:textSize="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="4444444"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="5555555"
+            android:textStyle="italic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="66666666"
+            android:textStyle="italic|bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="77777777"
+            android:background="#FF0000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
         <TextView
             android:text="888888888"
             app:layout_isUnderline="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
-
-
         <TextView
             android:text="999999999"
             app:layout_isStrikethrough="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
-
     </com.zhangzheng.easyrichtext.RichTextLayout>
 
 </LinearLayout>

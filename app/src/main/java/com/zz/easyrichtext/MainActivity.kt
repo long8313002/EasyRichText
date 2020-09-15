@@ -12,9 +12,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        tv3.setOnClickListener {
+        tvClick.setOnClickListener {
             Toast.makeText(this,"3333被点击",Toast.LENGTH_SHORT).show()
-            tv3.text = "asdasasdasd"
+            tvClick.text = "asdasasdasd"
         }
 
         flClick.setOnClickListener {
