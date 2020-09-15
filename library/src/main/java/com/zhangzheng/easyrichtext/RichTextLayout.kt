@@ -26,8 +26,10 @@ class RichTextLayout : FrameLayout {
     private val mChildren = mutableListOf<View>()
 
     fun update(){
-        removeAllViews()
-        addView(createShowTextView(generateSpanString()))
+        if(isAttachedToWindow){
+            removeAllViews()
+            addView(createShowTextView(generateSpanString()))
+        }
     }
 
     override fun onAttachedToWindow() {
