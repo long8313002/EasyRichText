@@ -25,25 +25,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <ImageView
-            android:id="@+id/ivClick"
-            android:layout_width="wrap_content"
-            android:src="@mipmap/ic_launcher"
-            android:layout_height="wrap_content"/>
-
-        <FrameLayout
-            android:id="@+id/flClick"
-            android:layout_width="wrap_content"
-            android:padding="10dp"
-            android:background="#33FF0000"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:text="我是自定义视图"
-                android:layout_height="wrap_content"/>
-        </FrameLayout>
-
         <TextView
             android:text="222222"
             android:visibility="invisible"
@@ -87,6 +68,25 @@
             app:layout_isStrikethrough="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/ivClick"
+            android:layout_width="20dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_height="20dp"/>
+
+        <FrameLayout
+            android:id="@+id/flClick"
+            android:layout_width="wrap_content"
+            android:padding="10dp"
+            android:background="#33FF0000"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:text="我是自定义视图"
+                android:layout_height="wrap_content"/>
+        </FrameLayout>
     </com.zhangzheng.easyrichtext.RichTextLayout>
 
 </LinearLayout>
