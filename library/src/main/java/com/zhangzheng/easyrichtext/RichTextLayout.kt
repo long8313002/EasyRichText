@@ -8,6 +8,7 @@ import android.text.SpannableStringBuilder
 import android.text.TextWatcher
 import android.text.method.LinkMovementMethod
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
@@ -25,8 +26,8 @@ class RichTextLayout : FrameLayout {
 
     private val mChildren = mutableListOf<View>()
 
-    fun update(){
-        if(isAttachedToWindow){
+    fun update() {
+        if (isAttachedToWindow) {
             removeAllViews()
             addView(createShowTextView(generateSpanString()))
         }
@@ -36,14 +37,37 @@ class RichTextLayout : FrameLayout {
         super.onAttachedToWindow()
 
         getChildren()
+        mergeChildrenClick()
         removeAllViews()
         monitorChildren()
         addView(createShowTextView(generateSpanString()))
     }
 
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        super.dispatchTouchEvent(ev)
+        var canClick = false
+        mChildren.forEach {
+            if (it.hasOnClickListeners()) {
+                canClick = true
+            }
+        }
+        return canClick
+    }
+
     private fun getChildren() {
         for (i in 0 until childCount) {
             mChildren.add(getChildAt(i))
+        }
+    }
+
+    private fun mergeChildrenClick() {
+        if(!hasOnClickListeners()){
+            return
+        }
+        mChildren.forEach {
+            if (!it.hasOnClickListeners()) {
+                it.setOnClickListener { performClick() }
+            }
         }
     }
 
@@ -92,7 +116,8 @@ class RichTextLayout : FrameLayout {
         val lp = LayoutParam(super.generateLayoutParams(attrs))
         lp.textStyle = ts
         lp.isUnderline = typedArray.getBoolean(R.styleable.rich_text_layout_isUnderline, false)
-        lp.isStrikethrough = typedArray.getBoolean(R.styleable.rich_text_layout_isStrikethrough, false)
+        lp.isStrikethrough =
+            typedArray.getBoolean(R.styleable.rich_text_layout_isStrikethrough, false)
         typedArray.recycle()
         return lp
     }
